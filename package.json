@@ -1,8 +1,8 @@
 {
-    "name": "casper",
+    "name": "tonsper",
     "description": "A clean, minimal default theme for the Ghost publishing platform",
     "demo": "https://demo.ghost.io",
-    "version": "4.7.2",
+    "version": "0.0.2",
     "engines": {
         "ghost": ">=4.0.0",
         "ghost-api": "v4"
@@ -23,9 +23,9 @@
         "postship": "git fetch && gulp release"
     },
     "author": {
-        "name": "Ghost Foundation",
-        "email": "hello@ghost.org",
-        "url": "https://ghost.org/"
+        "name": "CAT chain",
+        "email": "hello@minter.one",
+        "url": "https://tonblockchain.ru"
     },
     "gpm": {
         "type": "theme",
@@ -98,14 +98,6 @@
                 ],
                 "default": "Modern sans-serif"
             },
-            "body_font": {
-                "type": "select",
-                "options": [
-                    "Modern sans-serif",
-                    "Elegant serif"
-                ],
-                "default": "Elegant serif"
-            },
             "publication_cover_style": {
                 "type": "select",
                 "options": [
@@ -135,17 +127,9 @@
                 ],
                 "default": "Light"
             },
-            "header_button_background": {
-                "type": "color",
-                "default": "#ffffff"
-            },
-            "header_button_text_color": {
-                "type": "select",
-                "options": [
-                    "Light",
-                    "Dark"
-                ],
-                "default": "Dark"
+            "telegram_link": {
+                "type": "text",
+                "default": "tg://resolve?domain=ruton"
             },
             "post_image_width": {
                 "type": "select",
@@ -157,25 +141,30 @@
                 "default": "Wide",
                 "group": "post"
             },
-            "email_signup_for_logged_out_visitors": {
-                "type": "select",
-                "options": [
-                    "Footer",
-                    "Bottom of post",
-                    "None"
-                ],
-                "default": "Footer",
-                "group": "post"
-            },
-            "email_signup_text": {
-                "type": "text",
-                "default": "Sign up for more like this.",
-                "group": "post"
-            },
             "show_recent_posts": {
                 "type": "boolean",
                 "default": true,
                 "group": "post"
+            },
+            "comments_accent_color": {
+                "type": "color",
+                "default": "#0088cc",
+                "group": "post"
+            },
+            "comments_show_dislikes": {
+                "type": "boolean",
+                "default": true,
+                "group": "post"
+            },
+            "comments_outlined_icons": {
+                "type": "boolean",
+                "default": false,
+                "group": "post"
+            },
+            "comments_color_names": {
+                "type": "boolean",
+                "default": false,
+                "group": "post"    
             }
         }
     },

@@ -20,33 +20,20 @@ into the {body} tag of the default.hbs template --}}
 
             <h1 class="article-title">{{title}}</h1>
 
-            {{#if custom_excerpt}}
-            <p class="article-excerpt">{{custom_excerpt}}</p>
-            {{/if}}
-
             <div class="article-byline">
                 <section class="article-byline-content">
-                    <ul class="author-list">
-                        {{#foreach authors}}
-                        <li class="author-list-item">
-                            {{#if profile_image}}
-                            <a href="{{url}}" class="author-avatar">
-                                <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
-                            </a>
-                            {{else}}
-                            <a href="{{url}}" class="author-avatar author-profile-image">{{> "icons/avatar"}}</a>
-                            {{/if}}
-                        </li>
-                        {{/foreach}}
-                    </ul>
                     <div class="article-byline-meta">
-                        <h4 class="author-name">{{authors}}</h4>
                         <div class="byline-meta-content">
                             <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
-                            <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
+                            <span class="byline-reading-time">
+                                <span class="bull">&bull;</span>
+                                {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
+                            </span>
                         </div>
                     </div>
                 </section>
+
+                {{> "telega-subscribe"}}
             </div>
 
             {{#if feature_image}}
@@ -73,31 +60,24 @@ into the {body} tag of the default.hbs template --}}
             {{content}}
         </section>
 
-        {{!--
-        <section class="article-comments gh-canvas">
-            If you want to embed comments, this is a good place to paste your code!
+        <section class="gh-canvas">
+            {{> "telega-subscribe"}}
         </section>
-        --}}
+
+        <section class="article-comments gh-canvas">
+            <div class="tg-comments" id="tg-comments"
+                data-comments-app-website="gUpfz0f8"
+                data-page-id="{{comment_id}}"
+                data-color="{{@custom.comments_accent_color}}"
+                data-dislikes="{{@custom.comments_show_dislikes}}"
+                data-outlined="{{@custom.comments_outlined_icons}}"
+                data-colorful="{{@custom.comments_color_names}}"
+                data-limit="15">
+            </div>
+        </section>
 
     </article>
 </main>
-
-{{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
-{{#match @custom.email_signup_for_logged_out_visitors "!=" "None"}}
-{{#unless @member}}{{#if access}}
-    <section class="footer-cta {{#match @custom.email_signup_for_logged_out_visitors "Bottom of post"}}cta-alt{{/match}}">
-        <div class="inner">
-            {{#if @custom.email_signup_text}}<h2>{{@custom.email_signup_text}}</h2>{{/if}}
-            <a class="footer-cta-button" href="#/portal" data-portal>
-                <div class="footer-cta-input">Enter your email</div>
-                <span>Subscribe</span>
-            </a>
-            {{!-- ^ This looks like a form element, but it's just a link to Portal,
-            making the form validation and submission much simpler. --}}
-        </div>
-    </section>
-{{/if}}{{/unless}}
-{{/match}}
 
 
 {{!-- Read more links, just above the footer --}}
