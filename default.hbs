@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="icon" href="/assets/favicon.png">
-<!--    <link rel="shortcut icon" href="{{asset "favicon.png"}}" type="image/png">-->
+    <!-- <link rel="shortcut icon" href="{{asset "favicon.png"}}" type="image/png">-->
 
 
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
@@ -22,6 +22,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
 </head>
+
 <body class="{{body_class}} has-sans-body{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}">
 <div class="viewport">
 
@@ -29,6 +30,11 @@
         <nav class="gh-head-inner inner gh-container">
 
             <div class="gh-head-brand">
+                <a class="gh-burger" role="button">
+                    <div class="gh-burger-box">
+                        <div class="gh-burger-inner"></div>
+                    </div>
+                </a>
                 <a class="gh-head-logo" href="{{@site.url}}">
                     {{#if @site.logo}}
                         <img src="{{@site.logo}}" alt="{{@site.title}}" />
@@ -36,15 +42,17 @@
                         {{@site.title}}
                     {{/if}}
                 </a>
-                <a class="gh-burger" role="button">
-                    <div class="gh-burger-box">
-                        <div class="gh-burger-inner"></div>
-                    </div>
-                </a>
+
+                {{!-- Добавлена иконка Telegram для мобильной версии --}}
+                <div class="gh-social-telegram">
+                    {{> "telega-subscribe-mob"}}
+                </div>
+
             </div>
             <div class="gh-head-menu">
                 {{navigation}}
             </div>
+            {{!-- Версия Desktop --}}
             <div class="gh-head-actions">
                 <a class="gh-head-button ton-gay-gradient" target="_blank" href="{{@custom.telegram_link}}">Подписаться</a>
             </div>
@@ -84,4 +92,5 @@ void function() {
 {{ghost_foot}}
 
 </body>
+
 </html>
