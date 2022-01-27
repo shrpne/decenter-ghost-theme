@@ -435,25 +435,32 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     transform: translatey(8px);
 }
 
+.gh-head-open .gh-burger-box {
+    width: 23px;
+}
+
 .gh-head-open .gh-burger-box::before {
     /* width: 0; */
     width: 23px;
-    transform: translatex(18px);
-    transition: transform 200ms cubic-bezier(.2, .7, .3, 1), width 200ms cubic-bezier(.2, .7, .3, 1);
+    /* transform: translatex(18px); */
+    /* transition: transform 200ms cubic-bezier(.2, .7, .3, 1), width 200ms cubic-bezier(.2, .7, .3, 1); */
+    transition: width 200ms cubic-bezier(.2, .7, .3, 1);
 }
 
 .gh-head-open .gh-burger-inner::before {
     width: 12px;
-    top: -7px;
-    left: 10px;
-    transform: translatex(6px) rotate(135deg);
+    top: -8px;
+    /* left: 10px; */
+    /* transform: translatex(6px) rotate(135deg); */
+    transform: translatex(-1px) rotate(135deg);
 }
 
 .gh-head-open .gh-burger-inner::after {
     width: 12px;
-    bottom: -7px;
-    left: 10px;
-    transform: translatex(6px) rotate(-135deg);
+    bottom: -8px;
+    /* left: 10px; */
+    /* transform: translatex(6px) rotate(-135deg); */
+    transform: translatex(-1px) rotate(-135deg);
 }
 
 .gh-head-open .gh-head-logo {
@@ -472,6 +479,8 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 @media (max-width: 900px) {
     .gh-burger {
         display: inline-block;
+        margin-left: -6px;
+        padding: 6px;
     }
 
     #gh-head {
@@ -515,7 +524,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     }
 
     #gh-head .gh-head-menu .nav li {
-        margin: 7px 0;
+        /* margin: 7px 0; */
 
     }
 
@@ -2354,6 +2363,7 @@ html.dark-mode .tg-comments {
 /* ---------------------------------------------------------- */
 
 .social-icons {
+    margin: 0 -4px;
     display: flex;
     justify-content: space-between;
 }
@@ -2366,6 +2376,12 @@ html.dark-mode .tg-comments {
     border-radius: 6px;
     border: 1px solid #e8eaec;
     cursor: pointer;
+}
+
+.social-icon::-moz-focus-inner {
+    border: 1px solid #e8eaec;
+    padding: 0.5em;
+    margin-right: 0.5em;
 }
 
 .social-icon:last-child {
