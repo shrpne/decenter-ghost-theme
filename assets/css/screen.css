@@ -2096,8 +2096,7 @@ html.dark-mode .kg-header-card h3.kg-header-card-subheader {
     }
 
     html.auto-color .article-title {
-        /* color: rgba(255, 255, 255, 0.9); */
-        color: rgba(235, 14, 14, 0.9);
+        color: rgba(255, 255, 255, 0.9);
     }
 
     html.auto-color .article-excerpt {
