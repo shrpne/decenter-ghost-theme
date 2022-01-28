@@ -270,6 +270,10 @@ production stylesheet in assets/built/screen.css
     padding: 0;
 }
 
+.gh-head-menu .nav li:last-child {
+    margin-right: 0;
+}
+
 .gh-head-menu .nav a {
     display: inline-block;
     padding: 5px 0;
