@@ -358,8 +358,12 @@ a.gh-head-button {
 
 @media screen and (hover: hover) {
     a.gh-head-button:hover {
-        box-shadow: 1px 1px 12px rgba(183, 31, 226, 0.2);
-        background: linear-gradient(45deg, rgba(231, 142, 53, 1) 0%, rgba(183, 31, 226, 1) 50%, rgba(92, 141, 245, 1) 100%);
+        /* box-shadow: 1px 1px 12px rgba(183, 31, 226, 0.2); */
+        box-shadow: 1px 1px 12px rgba(41, 80, 134, 0.2);
+        /* background: linear-gradient(45deg, rgba(231, 142, 53, 1) 0%, rgba(183, 31, 226, 1) 50%, rgba(92, 141, 245, 1) 100%); */
+        background: linear-gradient(45deg, rgba(0, 210, 255, 1) 0%, rgba(58, 123, 213, 1) 100%);
+        /* Добавила Transition */
+        transition: all .2s ease;
     }
 }
 
@@ -1593,10 +1597,8 @@ iframe.instagram-media + script + :not([id]) {
 
 .read-more {
     display: grid;
-    /* grid-template-columns: 1fr 1fr 1fr; */
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 4vmin;
-    /* расстояние (промежуток) между строками и столбцами в макете сетки */
 }
 
 .read-more .post-card-title {
@@ -1615,7 +1617,6 @@ iframe.instagram-media + script + :not([id]) {
 
 @media (max-width: 1000px) {
     .read-more {
-        /* grid-template-columns: 1fr 1fr; */
         grid-template-rows: 1fr 1fr;
     }
 
@@ -2246,8 +2247,10 @@ the right place. Onward!
 }
 
 .ton-gay-gradient {
-    background: rgb(183, 31, 226);
-    background: linear-gradient(90deg, rgba(231, 142, 53, 1) 0%, rgba(183, 31, 226, 1) 50%, rgba(92, 141, 245, 1) 100%);
+    /* background: rgb(183, 31, 226); */
+    background: rgb(41, 80, 134);
+    /* background: linear-gradient(90deg, rgba(231, 142, 53, 1) 0%, rgba(183, 31, 226, 1) 50%, rgba(92, 141, 245, 1) 100%); */
+    background: linear-gradient(90deg, rgba(0, 210, 255, 1) 0%, rgba(58, 123, 213, 1) 100%);
 }
 
 .gh-subscribe {
@@ -2281,7 +2284,8 @@ the right place. Onward!
 }
 
 .gh-subscribe__head:hover {
-    box-shadow: 1px 1px 12px rgba(90, 60, 0, 0.65);
+    /* box-shadow: 1px 1px 12px rgba(90, 60, 0, 0.65); */
+    box-shadow: 1px 1px 12px rgba(0, 20, 90, 0.45);
 }
 
 .gh-subscribe__head-icon {
