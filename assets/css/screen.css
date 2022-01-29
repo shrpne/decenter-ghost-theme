@@ -366,8 +366,6 @@ a.gh-head-button {
         box-shadow: 1px 1px 12px rgba(41, 80, 134, 0.2);
         /* background: linear-gradient(45deg, rgba(231, 142, 53, 1) 0%, rgba(183, 31, 226, 1) 50%, rgba(92, 141, 245, 1) 100%); */
         background: linear-gradient(45deg, rgba(0, 210, 255, 1) 0%, rgba(58, 123, 213, 1) 100%);
-        /* Добавила Transition */
-        transition: all .2s ease;
     }
 }
 
@@ -669,11 +667,15 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 
 .read-more-wrap .post-card {
     flex-direction: row;
+        /* добавила */
+    align-items: center;
 }
 
 @media (max-width: 700px) {
     .read-more-wrap .post-card {
         min-height: auto;
+        /* добавила */
+        flex-direction: column;
     }
 }
 
@@ -684,12 +686,21 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     border-radius: 15px;
     margin: 0 -2px;
     margin-right: 4vmin;
+    /* добавила */
+    height: 200px;
+}
+
+@media (max-width: 700px) {
+    .post-card-image-link {
+        /* добавила */
+        margin-right: 0;
+    }
 }
 
 .post-card-image {
     width: 100%;
     /* height: 200px; */
-    height: 220px;
+    height: 100%;
     background: var(--color-lightgrey) no-repeat center center;
     object-fit: cover;
 }
@@ -710,8 +721,11 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     text-decoration: none;
 }
 
-.post-card-header {
-    margin: 20px 0 0;
+/* добавила @ media, св-во было */
+@media (max-width: 700px) {
+    .post-card-header {
+        margin: 20px 0 0;
+    }
 }
 
 .post-feed .no-image .post-card-content-link {
@@ -749,6 +763,15 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    /* добавила */
+    width: 75%;
+}
+
+@media (max-width: 700px) {
+    .post-card-content {
+        /* добавила */
+        width: 100%;
+    }
 }
 
 .post-card-excerpt {
@@ -1092,41 +1115,41 @@ created within the Ghost editor. The main content handles
 headings, text, images and lists. We deal with cards lower down. */
 
 /* Default vertical spacing */
-.gh-content > * + * {
+.gh-content>*+* {
     margin-top: 3vmin;
     margin-bottom: 0;
 }
 
 /* [id] represents all headings h1-h6, reset all margins */
-.gh-content > [id] {
+.gh-content>[id] {
     margin: 0;
     color: var(--color-darkgrey);
 }
 
-.has-serif-title .gh-content > [id] {
+.has-serif-title .gh-content>[id] {
     font-family: var(--font-serif);
 }
 
 /* Add back a top margin to all headings, unless a heading
 is the very first element in the post content */
-.gh-content > [id]:not(:first-child) {
+.gh-content>[id]:not(:first-child) {
     margin: 2em 0 0;
 }
 
 /* Add a small margin between a heading and anything after it */
-.gh-content > [id] + * {
+.gh-content>[id]+* {
     margin-top: 1.5rem !important;
 }
 
 /* A larger margin before/after HRs and blockquotes */
-.gh-content > hr,
-.gh-content > blockquote {
+.gh-content>hr,
+.gh-content>blockquote {
     position: relative;
     margin-top: 6vmin;
 }
 
-.gh-content > hr + *,
-.gh-content > blockquote + * {
+.gh-content>hr+*,
+.gh-content>blockquote+* {
     margin-top: 6vmin !important;
 }
 
@@ -1141,11 +1164,11 @@ is the very first element in the post content */
     text-decoration: underline;
 }
 
-.gh-content > blockquote:not([class]),
-.gh-content > ol,
-.gh-content > ul,
-.gh-content > dl,
-.gh-content > p {
+.gh-content>blockquote:not([class]),
+.gh-content>ol,
+.gh-content>ul,
+.gh-content>dl,
+.gh-content>p {
     font-family: var(--font-serif);
     font-weight: 400;
     font-size: 1.75rem;
@@ -1153,18 +1176,18 @@ is the very first element in the post content */
 }
 
 .gh-content .kg-callout-card .kg-callout-text,
-.gh-content .kg-toggle-card .kg-toggle-content > ol,
-.gh-content .kg-toggle-card .kg-toggle-content > ul,
-.gh-content .kg-toggle-card .kg-toggle-content > p {
+.gh-content .kg-toggle-card .kg-toggle-content>ol,
+.gh-content .kg-toggle-card .kg-toggle-content>ul,
+.gh-content .kg-toggle-card .kg-toggle-content>p {
     font-family: var(--font-serif);
     font-weight: 400;
     font-size: 1.9rem;
     line-height: 1.6em;
 }
 
-.gh-content .kg-product-card .kg-product-card-description > p,
-.gh-content .kg-product-card .kg-product-card-description > ol,
-.gh-content .kg-product-card .kg-product-card-description > ul {
+.gh-content .kg-product-card .kg-product-card-description>p,
+.gh-content .kg-product-card .kg-product-card-description>ol,
+.gh-content .kg-product-card .kg-product-card-description>ul {
     font-size: 1.7rem;
     line-height: 1.6em;
 }
@@ -1178,35 +1201,35 @@ is the very first element in the post content */
     font-size: 2.0rem;
 }
 
-.has-sans-body .gh-content > blockquote,
-.has-sans-body .gh-content > ol,
-.has-sans-body .gh-content > ul,
-.has-sans-body .gh-content > dl,
-.has-sans-body .gh-content > p,
+.has-sans-body .gh-content>blockquote,
+.has-sans-body .gh-content>ol,
+.has-sans-body .gh-content>ul,
+.has-sans-body .gh-content>dl,
+.has-sans-body .gh-content>p,
 .has-sans-body .gh-content .kg-callout-card .kg-callout-text,
-.has-sans-body .gh-content .kg-toggle-card .kg-toggle-content > ol,
-.has-sans-body .gh-content .kg-toggle-card .kg-toggle-content > ul,
-.has-sans-body .gh-content .kg-toggle-card .kg-toggle-content > p {
+.has-sans-body .gh-content .kg-toggle-card .kg-toggle-content>ol,
+.has-sans-body .gh-content .kg-toggle-card .kg-toggle-content>ul,
+.has-sans-body .gh-content .kg-toggle-card .kg-toggle-content>p {
     font-family: var(--font-sans);
 }
 
-.gh-content > ul,
-.gh-content > ol,
-.gh-content > dl,
-.gh-content .kg-toggle-card .kg-toggle-content > ol,
-.gh-content .kg-toggle-card .kg-toggle-content > ul,
-.gh-content .kg-product-card .kg-product-card-description > ol,
-.gh-content .kg-product-card .kg-product-card-description > ul {
+.gh-content>ul,
+.gh-content>ol,
+.gh-content>dl,
+.gh-content .kg-toggle-card .kg-toggle-content>ol,
+.gh-content .kg-toggle-card .kg-toggle-content>ul,
+.gh-content .kg-product-card .kg-product-card-description>ol,
+.gh-content .kg-product-card .kg-product-card-description>ul {
     padding-left: 1.9em;
 }
 
-.gh-content > blockquote:not([class]) {
+.gh-content>blockquote:not([class]) {
     position: relative;
     font-style: italic;
     padding: 0;
 }
 
-.gh-content > blockquote:not([class])::before {
+.gh-content>blockquote:not([class])::before {
     content: "";
     position: absolute;
     left: -1.5em;
@@ -1216,7 +1239,7 @@ is the very first element in the post content */
     background: var(--ghost-accent-color);
 }
 
-.gh-content :not(pre) > code {
+.gh-content :not(pre)>code {
     vertical-align: middle;
     padding: 0.15em 0.4em 0.15em;
     border: #e1eaef 1px solid;
@@ -1241,21 +1264,21 @@ is the very first element in the post content */
 
 @media (max-width: 650px) {
 
-    .gh-content > blockquote:not([class]),
-    .gh-content > ol,
-    .gh-content > ul,
-    .gh-content > dl,
-    .gh-content > p,
+    .gh-content>blockquote:not([class]),
+    .gh-content>ol,
+    .gh-content>ul,
+    .gh-content>dl,
+    .gh-content>p,
     .gh-content .kg-callout-card .kg-callout-text,
-    .gh-content .kg-toggle-card .kg-toggle-content > ol,
-    .gh-content .kg-toggle-card .kg-toggle-content > ul,
-    .gh-content .kg-toggle-card .kg-toggle-content > p {
+    .gh-content .kg-toggle-card .kg-toggle-content>ol,
+    .gh-content .kg-toggle-card .kg-toggle-content>ul,
+    .gh-content .kg-toggle-card .kg-toggle-content>p {
         font-size: 1.7rem;
     }
 
-    .gh-content .kg-product-card .kg-product-card-description > p,
-    .gh-content .kg-product-card .kg-product-card-description > ol,
-    .gh-content .kg-product-card .kg-product-card-description > ul {
+    .gh-content .kg-product-card .kg-product-card-description>p,
+    .gh-content .kg-product-card .kg-product-card-description>ol,
+    .gh-content .kg-product-card .kg-product-card-description>ul {
         font-size: 1.5rem;
     }
 
@@ -1275,7 +1298,7 @@ make sure they look good, and are given a bit of extra spacing. */
 
 /* Add extra margin before/after any cards,
 except for when immediately preceeded by a heading */
-.gh-content :not(.kg-card):not([id]) + .kg-card {
+.gh-content :not(.kg-card):not([id])+.kg-card {
     margin-top: 6vmin;
     margin-bottom: 0;
 }
@@ -1355,7 +1378,7 @@ iframe.instagram-media {
     margin-bottom: 0 !important;
 }
 
-iframe.instagram-media + script + :not([id]) {
+iframe.instagram-media+script+ :not([id]) {
     margin-top: 6vmin;
 }
 
@@ -1606,12 +1629,12 @@ iframe.instagram-media + script + :not([id]) {
 }
 
 .read-more .post-card-title {
-    color: #fff;
+    /* color: #fff; */
     opacity: 0.8;
 }
 
 .read-more .post-card-excerpt {
-    color: rgba(255, 255, 255, 0.6);
+    /* color: rgba(255, 255, 255, 0.6); */
 }
 
 .read-more .post-card-byline-content a {
@@ -1986,7 +2009,7 @@ html.dark-mode .no-image .author-social-link a {
     color: rgba(255, 255, 255, 0.75);
 }
 
-html.dark-mode .gh-content > [id] {
+html.dark-mode .gh-content>[id] {
     color: rgba(255, 255, 255, 0.9);
 }
 
@@ -1994,7 +2017,7 @@ html.dark-mode .gh-content pre {
     background: color-mod(var(--color-darkgrey) l(-8%));
 }
 
-html.dark-mode .gh-content :not(pre) > code {
+html.dark-mode .gh-content :not(pre)>code {
     background: color-mod(var(--color-darkgrey) l(+6%));
     border-color: color-mod(var(--color-darkmode) l(+8%));
     color: var(--color-wash);
@@ -2137,7 +2160,7 @@ html.dark-mode .kg-header-card h3.kg-header-card-subheader {
         color: rgba(255, 255, 255, 0.75);
     }
 
-    html.auto-color .gh-content > [id] {
+    html.auto-color .gh-content>[id] {
         color: rgba(255, 255, 255, 0.9);
     }
 
@@ -2145,7 +2168,7 @@ html.dark-mode .kg-header-card h3.kg-header-card-subheader {
         background: color-mod(var(--color-darkgrey) l(-8%));
     }
 
-    html.auto-color .gh-content :not(pre) > code {
+    html.auto-color .gh-content :not(pre)>code {
         background: color-mod(var(--color-darkgrey) l(+6%));
         border-color: color-mod(var(--color-darkmode) l(+8%));
         color: var(--color-wash);
@@ -2325,6 +2348,14 @@ the right place. Onward!
     width: 10rem;
 }
 
+/* добавила */
+@media all and (max-width: 600px) {
+    .gh-subscribe {
+        padding-left: 2.1rem;
+        padding-right: 2.1rem;
+    }
+}
+
 @media all and (max-width: 480px) {
     .gh-subscribe {
         flex-direction: column;
@@ -2411,19 +2442,19 @@ html.dark-mode .tg-comments {
 
 .social-icon .feather-copy {
     fill: none;
-    stroke-width:2;
- }
+    stroke-width: 2;
+}
 
 .social-icon:hover {
     background-color: #3a8cc8;
     border-color: transparent;
 }
 
-.social-icon:hover svg{
+.social-icon:hover svg {
     fill: #f2f4f6;
- }
+}
 
 .social-icon:hover .feather-copy {
     fill: #3a8cc8;
     stroke: #fff;
- }
+}
