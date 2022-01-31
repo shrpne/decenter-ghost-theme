@@ -2339,24 +2339,21 @@ the right place. Onward!
 
 .gh-subscribe__skin {
     position: absolute;
-    right: 1rem;
-    top: 1rem;
+    /* right: 1rem;
+    top: 1rem; */
+    right: 0;
+    top: -1rem;
 }
 
 .gh-subscribe__skin-icon {
+    position: relative;
     color: rgba(206, 226, 241, .15);
-    width: 10rem;
+    /* width: 10rem; */
+    width: 11rem;
 }
 
-/* добавила */
+/* поменяла расширение с 480 на 600px */
 @media all and (max-width: 600px) {
-    .gh-subscribe {
-        padding-left: 2.1rem;
-        padding-right: 2.1rem;
-    }
-}
-
-@media all and (max-width: 480px) {
     .gh-subscribe {
         flex-direction: column;
         padding: 1.8rem 1.8rem 1.1rem 1.8rem;
