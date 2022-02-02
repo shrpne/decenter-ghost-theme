@@ -38,11 +38,14 @@
                     </div>
                 </a>
                 <a class="gh-head-logo" href="{{@site.url}}">
-                    {{#if @site.logo}}
+                    {{!-- убрала текст Decenter --}}
+                    {{!-- {{#if @site.logo}}
                         <img src="{{@site.logo}}" alt="{{@site.title}}" />
                     {{else}}
                         {{@site.title}}
-                    {{/if}}
+                    {{/if}} --}}
+                    {{!-- Добавила svg-иконку Decenter --}}
+                    {{> "logo-decenter"}}
                 </a>
 
                 {{!-- Добавлена иконка Telegram для мобильной версии --}}

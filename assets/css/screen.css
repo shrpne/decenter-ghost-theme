@@ -215,7 +215,8 @@ production stylesheet in assets/built/screen.css
     word-break: break-all;
 }
 
-.gh-head-logo {
+/* убрала, т.к. logo svg */
+/* .gh-head-logo {
     display: block;
     padding: 10px 0;
     font-weight: 500;
@@ -223,17 +224,34 @@ production stylesheet in assets/built/screen.css
     line-height: 1.2em;
     letter-spacing: -0.02em;
     white-space: nowrap;
-}
+} */
 
-@media (max-width: 900px) {
+/* убрала, т.к. logo svg */
+/* @media (max-width: 900px) {
     .gh-head-logo {
         font-size: 19px;
         line-height: 1;
     }
+} */
+
+/* добавила */
+.gh-head-logo svg {
+    height: 19px;
+    fill: var(--ghost-accent-color);
+}
+
+/* добавила */
+.dark-mode .gh-head-logo svg {
+    fill: #fff;
 }
 
 .gh-head-logo img {
     max-height: 26px;
+}
+
+/* добавила */
+.dark-mode .gh-head-logo {
+    color: #fff;
 }
 
 .gh-social-telegram {
@@ -348,6 +366,7 @@ a.gh-head-button {
     letter-spacing: 0.065rem;
     text-transform: uppercase;
     margin-right: -2px;
+    box-shadow: 0 0 5px #000;
 }
 
 @media (max-width: 900px) {
@@ -356,15 +375,9 @@ a.gh-head-button {
     }
 }
 
-.dark-mode .gh-head-button {
-    box-shadow: 0 0 5px #000;
-}
-
 @media screen and (hover: hover) {
     a.gh-head-button:hover {
-        /* box-shadow: 1px 1px 12px rgba(183, 31, 226, 0.2); */
-        box-shadow: 1px 1px 12px rgba(41, 80, 134, 0.2);
-        /* background: linear-gradient(45deg, rgba(231, 142, 53, 1) 0%, rgba(183, 31, 226, 1) 50%, rgba(92, 141, 245, 1) 100%); */
+        box-shadow: 1px 1px 12px rgba(41, 80, 134, 0.3);
         background: linear-gradient(45deg, rgba(0, 210, 255, 1) 0%, rgba(58, 123, 213, 1) 100%);
     }
 }
@@ -383,7 +396,7 @@ a.gh-head-button {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 16px;
+    width: 19px;
     height: 19px;
 }
 
@@ -401,7 +414,7 @@ a.gh-head-button {
     margin: auto;
     content: '';
     width: 100%;
-    height: 3px;
+    height: 2px;
     border-radius: 1px;
     background: currentcolor;
     transition: transform 300ms cubic-bezier(.2, .6, .3, 1), width 300ms cubic-bezier(.2, .6, .3, 1);
@@ -418,7 +431,7 @@ a.gh-head-button {
     margin: auto;
     content: '';
     width: 100%;
-    height: 3px;
+    height: 2px;
     border-radius: 1px;
     background: currentcolor;
     transition: transform 250ms cubic-bezier(.2, .7, .3, 1), width 250ms cubic-bezier(.2, .7, .3, 1);
@@ -667,8 +680,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 
 .read-more-wrap .post-card {
     flex-direction: row;
-        /* добавила */
-    align-items: center;
 }
 
 @media (max-width: 700px) {
@@ -2277,7 +2288,7 @@ the right place. Onward!
     /* background: rgb(183, 31, 226); */
     background: rgb(41, 80, 134);
     /* background: linear-gradient(90deg, rgba(231, 142, 53, 1) 0%, rgba(183, 31, 226, 1) 50%, rgba(92, 141, 245, 1) 100%); */
-    background: linear-gradient(90deg, rgba(0, 210, 255, 1) 0%, rgba(58, 123, 213, 1) 100%);
+    background: linear-gradient(90deg, rgba(0, 210, 255, 1) 0%, rgba(69, 108, 195, 1) 50%, rgba(58, 123, 213, 1) 100%);
 }
 
 .gh-subscribe {
@@ -2290,15 +2301,17 @@ the right place. Onward!
     padding: 1.6rem 3.8rem;
     position: relative;
     align-items: center;
-}
-
-.dark-mode .gh-subscribe {
     box-shadow: 0 0 5px #000;
 }
 
+/* убрала */
+/* .dark-mode .gh-subscribe {
+    box-shadow: 0 0 5px #000;
+} */
+
 .gh-subscribe__head {
     align-items: center;
-    border-radius: 6px;
+    /* border-radius: 6px; */
     border-radius: 8px;
     background: #FFF;
     color: #8c5254;
@@ -2312,7 +2325,12 @@ the right place. Onward!
 
 .gh-subscribe__head:hover {
     /* box-shadow: 1px 1px 12px rgba(90, 60, 0, 0.65); */
-    box-shadow: 1px 1px 12px rgba(0, 20, 90, 0.45);
+    box-shadow: 1px 1px 12px rgba(0, 20, 90, 0.65);
+}
+
+/* добавила */
+.dark-mode .gh-subscribe__head:hover {
+    box-shadow: 1px 1px 12px rgba(0, 20, 90, 0.65);
 }
 
 .gh-subscribe__head-icon {
@@ -2339,17 +2357,15 @@ the right place. Onward!
 
 .gh-subscribe__skin {
     position: absolute;
-    /* right: 1rem;
-    top: 1rem; */
-    right: 0;
-    top: -1rem;
+    right: 1rem;
+    top: 1rem;
 }
 
 .gh-subscribe__skin-icon {
     position: relative;
     color: rgba(206, 226, 241, .15);
     /* width: 10rem; */
-    width: 11rem;
+    width: 9rem;
 }
 
 /* поменяла расширение с 480 на 600px */
@@ -2440,6 +2456,11 @@ html.dark-mode .tg-comments {
 .social-icon .feather-copy {
     fill: none;
     stroke-width: 2;
+}
+
+/* добавила */
+.dark-mode .social-icon .feather-copy {
+    stroke: #2b2b2b;
 }
 
 .social-icon:hover {
