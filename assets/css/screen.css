@@ -695,15 +695,23 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     display: block;
     overflow: hidden;
     border-radius: 15px;
-    margin: 0 -2px;
+    margin: 0 0 4vmin -2px;
+}
+
+aside .post-card-image-link {
     margin-right: 4vmin;
-    /* добавила */
-    height: 200px;
+    margin-bottom: 0;
 }
 
 @media (max-width: 700px) {
+/* @media (max-width: 1000px) { */
     .post-card-image-link {
         /* добавила */
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+
+    aside .post-card-image-link {
         margin-right: 0;
     }
 }
@@ -1640,7 +1648,7 @@ iframe.instagram-media+script+ :not([id]) {
 }
 
 .read-more .post-card-title {
-    /* color: #fff; */
+    color: #fff;
     opacity: 0.8;
 }
 
