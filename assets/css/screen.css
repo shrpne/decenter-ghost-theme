@@ -366,7 +366,6 @@ a.gh-head-button {
     letter-spacing: 0.065rem;
     text-transform: uppercase;
     margin-right: -2px;
-    box-shadow: 0 0 5px #000;
 }
 
 @media (max-width: 900px) {
@@ -378,7 +377,7 @@ a.gh-head-button {
 @media screen and (hover: hover) {
     a.gh-head-button:hover {
         box-shadow: 1px 1px 12px rgba(41, 80, 134, 0.3);
-        background: linear-gradient(45deg, rgba(0, 210, 255, 1) 0%, rgba(58, 123, 213, 1) 100%);
+        background: linear-gradient(90deg, rgba(0, 210, 255, 1) 0%, rgba(69, 108, 195, 1) 50%, rgba(58, 123, 213, 1) 100%);
     }
 }
 
@@ -704,7 +703,8 @@ aside .post-card-image-link {
 }
 
 @media (max-width: 700px) {
-/* @media (max-width: 1000px) { */
+
+    /* @media (max-width: 1000px) { */
     .post-card-image-link {
         /* добавила */
         margin-right: 0;
@@ -2293,10 +2293,8 @@ the right place. Onward!
 }
 
 .ton-gay-gradient {
-    /* background: rgb(183, 31, 226); */
     background: rgb(41, 80, 134);
-    /* background: linear-gradient(90deg, rgba(231, 142, 53, 1) 0%, rgba(183, 31, 226, 1) 50%, rgba(92, 141, 245, 1) 100%); */
-    background: linear-gradient(90deg, rgba(0, 210, 255, 1) 0%, rgba(69, 108, 195, 1) 50%, rgba(58, 123, 213, 1) 100%);
+    background: linear-gradient(45deg, rgba(0, 210, 255, 1) 0%, rgba(58, 123, 213, 1) 100%);
 }
 
 .gh-subscribe {
@@ -2309,7 +2307,6 @@ the right place. Onward!
     padding: 1.6rem 3.8rem;
     position: relative;
     align-items: center;
-    box-shadow: 0 0 5px #000;
 }
 
 /* убрала */
