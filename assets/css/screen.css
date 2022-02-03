@@ -679,6 +679,8 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 @media (max-width: 700px) {
     .post-card {
         min-height: auto;
+        flex-direction: row;
+        align-items: center;
     }
 }
 
@@ -688,6 +690,13 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     overflow: hidden;
     border-radius: 15px;
     margin: 0 -2px;
+}
+
+@media (max-width: 700px) {
+    .post-card-image-link {
+        width: 100%;
+        margin-right: 2rem;
+    }
 }
 
 .post-card-image {
@@ -708,6 +717,12 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 
 .post-card-header {
     margin: 20px 0 0;
+}
+
+@media (max-width: 700px) {
+    .post-card-header {
+        margin: 0;
+    }
 }
 
 .post-feed .no-image .post-card-content-link {
@@ -732,6 +747,8 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     font-size: 2.4rem;
     transition: color 0.2s ease-in-out;
 }
+
+
 
 .no-image .post-card-title {
     margin-top: 0;
@@ -759,6 +776,12 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     padding-bottom: 6px;
 }
 
+@media (max-width: 700px) {
+    .post-card-excerpt {
+        display: none;
+    }
+}
+
 .has-sans-body .post-card-excerpt {
     font-family: var(--font-sans-serif);
 }
@@ -776,6 +799,12 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     display: flex;
     align-items: center;
     padding: 0;
+}
+
+@media (max-width: 700px) {
+    .post-card-meta {
+        display: none;
+    }
 }
 
 .author-profile-image,
@@ -963,8 +992,19 @@ make sure this only happens on large viewports / desktop-ish devices.
     }
 }
 
+@media (max-width: 700px) {
+    .post-card-title {
+       margin: 0;
+       font-size: 1.9rem;
+    }
 
-@media (max-width: 500px) {
+    /* ???  при max-width: 700px .post-card-excerpt: display - none   , см. строка 781  */
+    .post-card-excerpt {
+        font-size: 1.6rem;
+    }
+}
+
+/* @media (max-width: 500px) {
     .post-card-title {
         font-size: 1.9rem;
     }
@@ -972,7 +1012,7 @@ make sure this only happens on large viewports / desktop-ish devices.
     .post-card-excerpt {
         font-size: 1.6rem;
     }
-}
+} */
 
 
 /* 7. Single Post
@@ -1614,7 +1654,6 @@ iframe.instagram-media+script+ :not([id]) {
     color: #fff;
 }
 
-
 @media (max-width: 1000px) {
     .read-more {
         grid-template-columns: 1fr 1fr;
@@ -1627,11 +1666,16 @@ iframe.instagram-media+script+ :not([id]) {
 
 @media (max-width: 700px) {
     .read-more {
-        grid-template-columns: 1fr;
+        grid-template-columns: unset;
+        grid-template-rows: 1fr 1fr 1fr;
     }
 
     .read-more article:nth-child(2) {
-        display: none;
+        /* display: none; */
+    }
+
+    .read-more article:nth-child(3) {
+        display: flex;
     }
 }
 
