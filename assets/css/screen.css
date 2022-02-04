@@ -679,6 +679,9 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 @media (max-width: 700px) {
     .post-card {
         min-height: auto;
+    }
+
+    .read-more .post-card {
         flex-direction: row;
         align-items: center;
     }
@@ -689,18 +692,20 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     display: block;
     overflow: hidden;
     border-radius: 15px;
-    margin: 0 -2px;
+    padding-bottom: 52.666%;
 }
 
 @media (max-width: 700px) {
-    .post-card-image-link {
+    .read-more .post-card-image-link {
         width: 100%;
         margin-right: 2rem;
     }
 }
 
 .post-card-image {
+    position: absolute;
     width: 100%;
+    height: 100%;
     background: var(--color-lightgrey) no-repeat center center;
     object-fit: cover;
 }
@@ -720,7 +725,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 }
 
 @media (max-width: 700px) {
-    .post-card-header {
+    .read-more .post-card-header {
         margin: 0;
     }
 }
@@ -777,7 +782,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 }
 
 @media (max-width: 700px) {
-    .post-card-excerpt {
+    .read-more .post-card-excerpt {
         display: none;
     }
 }
@@ -802,7 +807,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 }
 
 @media (max-width: 700px) {
-    .post-card-meta {
+    .read-more .post-card-meta {
         display: none;
     }
 }
@@ -993,9 +998,9 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 @media (max-width: 700px) {
-    .post-card-title {
+    .read-more .post-card-title {
        margin: 0;
-       font-size: 1.9rem;
+       font-size: 1.5rem;
     }
 
     /* ???  при max-width: 700px .post-card-excerpt: display - none   , см. строка 781  */
