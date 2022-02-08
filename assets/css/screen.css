@@ -458,25 +458,18 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 }
 
 .gh-head-open .gh-burger-box::before {
-    /* width: 0; */
-    /* transform: translatex(18px); */
-    /* transition: transform 200ms cubic-bezier(.2, .7, .3, 1), width 200ms cubic-bezier(.2, .7, .3, 1); */
     transition: width 200ms cubic-bezier(.2, .7, .3, 1);
 }
 
 .gh-head-open .gh-burger-inner::before {
     width: 12px;
     top: -8px;
-    /* left: 10px; */
-    /* transform: translatex(6px) rotate(135deg); */
     transform: translatex(-1px) rotate(135deg);
 }
 
 .gh-head-open .gh-burger-inner::after {
     width: 12px;
     bottom: -8px;
-    /* left: 10px; */
-    /* transform: translatex(6px) rotate(-135deg); */
     transform: translatex(-1px) rotate(-135deg);
 }
 
@@ -529,7 +522,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
         display: flex;
         flex-direction: column;
         align-self: center;
-        /* align-items: center; */
         align-items: flex-start;
         text-align: center;
         margin: 0 0 10vh 0;
@@ -542,7 +534,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 
     #gh-head .gh-head-menu .nav li {
         /* margin: 7px 0; */
-
     }
 
     #gh-head .gh-head-menu .nav a {
@@ -552,7 +543,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     #gh-head .gh-head-menu .nav {
         display: flex;
         flex-direction: column;
-        /* align-items: center;  */
         align-items: flex-start;
     }
 
@@ -699,6 +689,8 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     .read-more .post-card-image-link {
         width: 100%;
         margin-right: 2rem;
+        /* добавила */
+        padding-bottom: 15%;
     }
 }
 
@@ -753,8 +745,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     transition: color 0.2s ease-in-out;
 }
 
-
-
 .no-image .post-card-title {
     margin-top: 0;
 }
@@ -767,6 +757,13 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+}
+
+/* Добавила */
+@media (max-width: 700px) {
+    .post-card-content {
+        width: 200%;
+    }
 }
 
 .post-card-excerpt {
@@ -2322,7 +2319,9 @@ the right place. Onward!
     /* border-radius: 6px; */
     border-radius: 8px;
     background: #FFF;
-    color: #8c5254;
+    color: rgba(69, 108, 195, 1);
+    color: rgb(41, 80, 134);
+    /* color: #000; */
     font-weight: normal;
     display: flex;
     padding: 0.65rem 0;
@@ -2333,6 +2332,13 @@ the right place. Onward!
 
 .gh-subscribe__head:hover {
     /* box-shadow: 1px 1px 12px rgba(90, 60, 0, 0.65); */
+    box-shadow: 1px 1px 12px rgba(0, 20, 90, 0.65);
+}
+
+/* добавила */
+.dark-mode .gh-subscribe__head {
+    color: #fff;
+    background: #15202b;
     box-shadow: 1px 1px 12px rgba(0, 20, 90, 0.65);
 }
 
