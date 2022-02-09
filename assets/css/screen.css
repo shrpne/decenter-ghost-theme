@@ -731,12 +731,14 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 }
 
 .post-card-primary-tag {
-    margin: 0 0 0.2em;
+    /* добавила */
+    display: none;
+    /* margin: 0 0 0.2em;
     color: var(--ghost-accent-color);
     font-size: 1.2rem;
     font-weight: 500;
     letter-spacing: 0.2px;
-    text-transform: uppercase;
+    text-transform: uppercase; */
 }
 
 .post-card-title {
