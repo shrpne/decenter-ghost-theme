@@ -78,7 +78,23 @@ into the {body} tag of the default.hbs template --}}
 
         {{!-- Social Icons --}}
         <section class="gh-canvas">
-            <div class="social-icons">{{> "soc-icons"}}</div>
+            <div class="social-icons">
+                <a class="social-icon" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{this.url}}">
+                    {{> "icons/facebook"}}
+                </a>
+                <a class="social-icon" target="_blank" href="https://vk.com/share.php?url={{this.url}}&title={{title}}">
+                    {{> "icons/vk"}}
+                </a>
+                <a class="social-icon" target="_blank" href="https://t.me/share/url?url={{this.url}}">
+                    {{> "icons/telegram"}}
+                </a>
+                <a class="social-icon" target="_blank" href="https://twitter.com/intent/tweet?url={{this.url}}&text={{title}}">
+                    {{> "icons/twitter"}}
+                </a>
+                <div class="social-icon">
+                    {{> "icons/copy-link"}}
+                </div>
+            </div>
         </section>
     </article>
 </main>

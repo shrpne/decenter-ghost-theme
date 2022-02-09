@@ -590,7 +590,7 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 
 @media (max-width: 900px) {
     #gh-head .gh-head-menu {
-        font-size: 2vmin;
+        font-size: 1.6rem;
         font-weight: 500;
     }
 }
@@ -2315,13 +2315,14 @@ the right place. Onward!
 } */
 
 .gh-subscribe__head {
+    position: relative;
+    z-index: 1;
     align-items: center;
     /* border-radius: 6px; */
     border-radius: 8px;
     background: #FFF;
-    color: rgba(69, 108, 195, 1);
-    color: rgb(41, 80, 134);
-    /* color: #000; */
+    /*color: rgb(41, 80, 134);*/
+    color: #36577b;
     font-weight: normal;
     display: flex;
     padding: 0.65rem 0;
@@ -2331,7 +2332,7 @@ the right place. Onward!
 }
 
 .gh-subscribe__head:hover {
-    /* box-shadow: 1px 1px 12px rgba(90, 60, 0, 0.65); */
+     /*box-shadow: 1px 1px 12px rgba(90, 60, 0, 0.65); */
     box-shadow: 1px 1px 12px rgba(0, 20, 90, 0.65);
 }
 
@@ -2442,12 +2443,8 @@ html.dark-mode .tg-comments {
     border-radius: 6px;
     border: 1px solid #e8eaec;
     cursor: pointer;
-}
-
-.social-icon::-moz-focus-inner {
-    border: 1px solid #e8eaec;
-    padding: 0.5em;
-    margin-right: 0.5em;
+    color: #2b2b2b;
+    text-align: center;
 }
 
 .social-icon:last-child {
@@ -2464,29 +2461,18 @@ html.dark-mode .tg-comments {
     /* width: 1.25rem;
     height: 1.25rem; */
     border-radius: 3px;
-    fill: #2b2b2b;
+    fill: currentColor;
 }
 
 .social-icon .feather-copy {
     fill: none;
+    stroke: currentColor;
     stroke-width: 2;
-}
-
-/* добавила */
-.dark-mode .social-icon .feather-copy {
-    stroke: #2b2b2b;
 }
 
 .social-icon:hover {
     background-color: #3a8cc8;
     border-color: transparent;
+    color: #f2f4f6;
 }
 
-.social-icon:hover svg {
-    fill: #f2f4f6;
-}
-
-.social-icon:hover .feather-copy {
-    fill: #3a8cc8;
-    stroke: #fff;
-}
