@@ -58,7 +58,7 @@ function css(done) {
     ], handleError(done));
 }
 
-function js(done) {
+function jsGlobal(done) {
     pump([
         src([
             // pull in lib files first so our own code can depend on it
@@ -71,6 +71,18 @@ function js(done) {
         livereload()
     ], handleError(done));
 }
+function jsPost(done) {
+    pump([
+        src([
+            'assets/js/post/*.js'
+        ], {sourcemaps: true}),
+        concat('post.js'),
+        uglify(),
+        dest('assets/built/', {sourcemaps: '.'}),
+        livereload()
+    ], handleError(done));
+}
+const js = series(jsGlobal, jsPost);
 
 function zipper(done) {
     const filename = require('./package.json').name + '.zip';
