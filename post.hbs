@@ -91,9 +91,9 @@ into the {body} tag of the default.hbs template --}}
                 <a class="social-icon" target="_blank" href="https://twitter.com/intent/tweet?url={{this.url}}&text={{title}}">
                     {{> "icons/twitter"}}
                 </a>
-                <div class="social-icon">
+                <button class="social-icon" data-clipbrd-copy="{{this.url}}">
                     {{> "icons/copy-link"}}
-                </div>
+                </button>
             </div>
         </section>
     </article>

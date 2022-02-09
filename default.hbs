@@ -88,6 +88,10 @@ void function() {
 
 {{!-- Scripts - handle member signups, responsive videos, infinite scroll, floating headers, and galleries --}}
 <script defer src="{{asset 'built/casper.js'}}" onload="$('.gh-content').fitVids()"></script>
+{{#if post}}
+    <script defer src="https://unpkg.com/clipbrd@1"></script>
+    <script defer src="{{asset 'built/post.js'}}"></script>
+{{/if}}
 
 {{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the closing body tag --}}
 {{ghost_foot}}
