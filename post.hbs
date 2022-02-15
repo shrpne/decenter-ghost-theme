@@ -91,14 +91,15 @@ into the {body} tag of the default.hbs template --}}
                 <a class="social-icon" target="_blank" href="https://twitter.com/intent/tweet?url={{this.url}}&text={{title}}">
                     {{> "icons/twitter"}}
                 </a>
-                <button class="social-icon" data-clipbrd-copy="{{this.url}}">
+                <button class="social-icon social-icon-copy"  data-clipbrd-copy="{{this.url}}">
                     {{> "icons/copy-link"}}
+                    {{!-- Добавила ВСПЛЫВАЮЩЕЕ ОКНО у кнопки COPY --}}
+                    <div id="popup" class="popup-box">Скопировано</div>
                 </button>
             </div>
         </section>
     </article>
 </main>
-
 
 {{!-- Read more links, just above the footer --}}
 {{#if @custom.show_recent_posts}}

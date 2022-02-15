@@ -13,7 +13,7 @@
     <!-- <link rel="shortcut icon" href="{{asset "favicon.png"}}" type="image/png">-->
 
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
-
+    
     {{!-- This tag outputs all your advanced SEO meta, structured data, and other important settings,
     it should always be the last tag before the closing head tag --}}
     {{ghost_head}}
@@ -91,6 +91,8 @@ void function() {
 {{#if post}}
     <script defer src="https://unpkg.com/clipbrd@1"></script>
     <script defer src="{{asset 'built/post.js'}}"></script>
+    <!-- Всплывающее окно кнопки Copy-->
+    <script defer src="{{asset 'js/post/clipbrd-copy-url.js'}} " ></script>
 {{/if}}
 
 {{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the closing body tag --}}

@@ -998,8 +998,8 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 @media (max-width: 700px) {
     .read-more .post-card-title {
-       margin: 0;
-       font-size: 1.5rem;
+        margin: 0;
+        font-size: 1.5rem;
     }
 
     /* ???  при max-width: 700px .post-card-excerpt: display - none   , см. строка 781  */
@@ -2323,7 +2323,6 @@ the right place. Onward!
     /* border-radius: 6px; */
     border-radius: 8px;
     background: #FFF;
-    /*color: rgb(41, 80, 134);*/
     color: #36577b;
     font-weight: normal;
     display: flex;
@@ -2334,7 +2333,6 @@ the right place. Onward!
 }
 
 .gh-subscribe__head:hover {
-     /*box-shadow: 1px 1px 12px rgba(90, 60, 0, 0.65); */
     box-shadow: 1px 1px 12px rgba(0, 20, 90, 0.65);
 }
 
@@ -2347,7 +2345,8 @@ the right place. Onward!
 
 /* добавила */
 .dark-mode .gh-subscribe__head:hover {
-    box-shadow: 1px 1px 12px rgba(0, 20, 90, 0.65);
+    box-shadow: 1px 1px 12px rgb(0, 20, 90);
+    background: rgba(21, 32, 43, .9);
 }
 
 .gh-subscribe__head-icon {
@@ -2449,7 +2448,8 @@ html.dark-mode .tg-comments {
     text-align: center;
 }
 
-.social-icon:last-child {
+.social-icon-copy {
+    position: relative;
     margin-right: 0;
 }
 
@@ -2472,9 +2472,58 @@ html.dark-mode .tg-comments {
     stroke-width: 2;
 }
 
-.social-icon:hover {
+.social-icon:hover,
+.social-icon:focus {
     background-color: #3a8cc8;
     border-color: transparent;
     color: #f2f4f6;
 }
+
+/* Всплывающее окно у кнопки COPY */
+.popup-box {
+    padding: 5px 9px;
+    position: absolute;
+    display: none;
+    width: 100%;
+    bottom: -46px;
+    border-radius: 4px;
+    background: linear-gradient(45deg, #00d2ff, #3a7bd5);
+    box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.12);
+        
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+    text-align: center;
+    }
+
+.popup-box::before {
+    position: absolute;
+    content: "";
+    width: 14px;
+    height: 14px;
+    top: 0px;
+    left: 50%;
+    background: #1fa4e9;
+    transform: rotate(45deg) translatex(-50%);
+    z-index: -1;
+}
+
+@media (max-width: 900px) {
+    .popup-box {
+        width: 118px;
+        right: 0;
+        bottom: -43px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 500px) {
+    .popup-box::before {
+        left: unset;
+        right: 10px;
+    }
+}
+
 
