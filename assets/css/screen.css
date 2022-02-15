@@ -670,11 +670,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     .post-card {
         min-height: auto;
     }
-
-    .read-more .post-card {
-        flex-direction: row;
-        align-items: center;
-    }
 }
 
 .post-card-image-link {
@@ -683,15 +678,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     overflow: hidden;
     border-radius: 15px;
     padding-bottom: 52.666%;
-}
-
-@media (max-width: 700px) {
-    .read-more .post-card-image-link {
-        width: 100%;
-        margin-right: 2rem;
-        /* добавила */
-        padding-bottom: 15%;
-    }
 }
 
 .post-card-image {
@@ -714,12 +700,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 
 .post-card-header {
     margin: 20px 0 0;
-}
-
-@media (max-width: 700px) {
-    .read-more .post-card-header {
-        margin: 0;
-    }
 }
 
 .post-feed .no-image .post-card-content-link {
@@ -761,13 +741,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     flex-direction: column;
 }
 
-/* Добавила */
-@media (max-width: 700px) {
-    .post-card-content {
-        width: 200%;
-    }
-}
-
 .post-card-excerpt {
     max-width: 56em;
     color: color-mod(var(--color-midgrey) l(-8%));
@@ -778,12 +751,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     padding-bottom: 6px;
-}
-
-@media (max-width: 700px) {
-    .read-more .post-card-excerpt {
-        display: none;
-    }
 }
 
 .has-sans-body .post-card-excerpt {
@@ -803,12 +770,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
     display: flex;
     align-items: center;
     padding: 0;
-}
-
-@media (max-width: 700px) {
-    .read-more .post-card-meta {
-        display: none;
-    }
 }
 
 .author-profile-image,
@@ -993,18 +954,6 @@ make sure this only happens on large viewports / desktop-ish devices.
         font-size: 1.7rem;
         line-height: 1.55em;
         -webkit-line-clamp: 8;
-    }
-}
-
-@media (max-width: 700px) {
-    .read-more .post-card-title {
-        margin: 0;
-        font-size: 1.5rem;
-    }
-
-    /* ???  при max-width: 700px .post-card-excerpt: display - none   , см. строка 781  */
-    .post-card-excerpt {
-        font-size: 1.6rem;
     }
 }
 
@@ -1650,10 +1599,6 @@ iframe.instagram-media+script+ :not([id]) {
     opacity: 0.8;
 }
 
-.read-more .post-card-excerpt {
-    /* color: rgba(255, 255, 255, 0.6); */
-}
-
 .read-more .post-card-byline-content a {
     color: #fff;
 }
@@ -1674,12 +1619,41 @@ iframe.instagram-media+script+ :not([id]) {
         grid-template-rows: 1fr 1fr 1fr;
     }
 
-    .read-more article:nth-child(2) {
-        /* display: none; */
-    }
-
     .read-more article:nth-child(3) {
         display: flex;
+    }
+
+    .read-more .post-card {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .read-more .post-card-image-link {
+        width: 100%;
+        margin-right: 2rem;
+        /* добавила */
+        padding-bottom: 15%;
+    }
+
+    .read-more .post-card-content {
+        width: 200%;
+    }
+
+    .read-more .post-card-header {
+        margin: 0;
+    }
+
+    .read-more .post-card-title {
+        margin: 0;
+        font-size: 1.5rem;
+    }
+
+    .read-more .post-card-excerpt {
+        display: none;
+    }
+
+    .read-more .post-card-meta {
+        display: none;
     }
 }
 
@@ -2446,6 +2420,7 @@ html.dark-mode .tg-comments {
     cursor: pointer;
     color: #2b2b2b;
     text-align: center;
+    transition: .2s all ease;
 }
 
 .social-icon-copy {

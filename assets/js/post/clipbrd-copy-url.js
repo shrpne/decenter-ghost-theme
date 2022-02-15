@@ -11,10 +11,12 @@
 
               // Добавила ВСПЛЫВАЮЩЕЕ ОКНО у кнопки COPY
               setTimeout(function () {
-                  textPopup.style.display = "block"; //скрывем
+                  //проявляем:
+                  textPopup.style.display = "block"; 
+                  //скрываем:
                   setTimeout(function () {
-                      textPopup.style.display = "none"; //проявляем
-                  }, 3000);
+                      textPopup.style.display = "none"; 
+                  }, 1000);
               }, 500);
           });
       } else {
