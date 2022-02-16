@@ -234,13 +234,11 @@ production stylesheet in assets/built/screen.css
     }
 } */
 
-/* добавила */
 .gh-head-logo svg {
     height: 19px;
     fill: var(--ghost-accent-color);
 }
 
-/* добавила */
 .dark-mode .gh-head-logo svg {
     fill: #fff;
 }
@@ -249,7 +247,6 @@ production stylesheet in assets/built/screen.css
     max-height: 26px;
 }
 
-/* добавила */
 .dark-mode .gh-head-logo {
     color: #fff;
 }
@@ -711,7 +708,6 @@ body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
 }
 
 .post-card-primary-tag {
-    /* добавила */
     display: none;
     /* margin: 0 0 0.2em;
     color: var(--ghost-accent-color);
@@ -1631,7 +1627,6 @@ iframe.instagram-media+script+ :not([id]) {
     .read-more .post-card-image-link {
         width: 100%;
         margin-right: 2rem;
-        /* добавила */
         padding-bottom: 15%;
     }
 
@@ -2285,7 +2280,6 @@ the right place. Onward!
     align-items: center;
 }
 
-/* убрала */
 /* .dark-mode .gh-subscribe {
     box-shadow: 0 0 5px #000;
 } */
@@ -2294,7 +2288,6 @@ the right place. Onward!
     position: relative;
     z-index: 1;
     align-items: center;
-    /* border-radius: 6px; */
     border-radius: 8px;
     background: #FFF;
     color: #36577b;
@@ -2310,14 +2303,12 @@ the right place. Onward!
     box-shadow: 1px 1px 12px rgba(0, 20, 90, 0.65);
 }
 
-/* добавила */
 .dark-mode .gh-subscribe__head {
     color: #fff;
     background: #15202b;
     box-shadow: 1px 1px 12px rgba(0, 20, 90, 0.65);
 }
 
-/* добавила */
 .dark-mode .gh-subscribe__head:hover {
     box-shadow: 1px 1px 12px rgb(0, 20, 90);
     background: rgba(21, 32, 43, .9);
@@ -2456,10 +2447,11 @@ html.dark-mode .tg-comments {
 
 /* Всплывающее окно у кнопки COPY */
 .popup-box {
-    padding: 5px 9px;
+    padding: 5px 5px;
     position: absolute;
     display: none;
     width: 100%;
+    right: 0;
     bottom: -46px;
     border-radius: 4px;
     background: linear-gradient(45deg, #00d2ff, #3a7bd5);
@@ -2485,20 +2477,18 @@ html.dark-mode .tg-comments {
     z-index: -1;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 700px) {
     .popup-box {
         width: 118px;
-        right: 0;
         bottom: -43px;
         font-size: 14px;
     }
-}
 
-@media (max-width: 500px) {
     .popup-box::before {
         left: unset;
         right: 10px;
     }
 }
+
 
 
