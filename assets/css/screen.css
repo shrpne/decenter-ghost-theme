@@ -1625,13 +1625,13 @@ iframe.instagram-media+script+ :not([id]) {
     }
 
     .read-more .post-card-image-link {
-        width: 100%;
+        width: 33%;
         margin-right: 2rem;
         padding-bottom: 15%;
     }
 
     .read-more .post-card-content {
-        width: 200%;
+        width: 66%;
     }
 
     .read-more .post-card-header {
